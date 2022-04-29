@@ -2,6 +2,12 @@
 
 A flattener to class-validator's ValidationError array
 
+![Build status](https://github.com/nickolascarlos/class-validator-errors-flattener/workflows/Testing/badge.svg)
+![NPM version](https://badge.fury.io/js/class-validator-errors-flattener.svg)
+![Issues](https://img.shields.io/bitbucket/issues/nickolascarlos/class-validator-errors-flattener)
+[![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)](http://unlicense.org/)
+![Downloads](https://img.shields.io/npm/dm/class-validator-errors-flattener)
+
 ## Install
 
 ```sh
