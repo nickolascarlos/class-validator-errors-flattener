@@ -2,6 +2,12 @@
 
 A flattener to class-validator's ValidationError array
 
+## Install
+
+```sh
+npm install class-validator-errors-flattener
+```
+
 ## Usage
 
 To flatten the class-validator ValidationError array, just pass it to the flattenValidationErrors function
@@ -9,7 +15,7 @@ To flatten the class-validator ValidationError array, just pass it to the flatte
 Example:
 ```ts
 import { validate, MinLength, Min, IsNotEmpty, ValidateNested } from 'class-validator';
-import { flattenValidationErrors } from './cv-errors-flattener'
+import { flattenValidationErrors } from 'class-validators-errors-flattener'
 
 class Address {
   @IsNotEmpty()
