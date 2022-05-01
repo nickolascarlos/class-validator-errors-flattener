@@ -5,7 +5,7 @@ import ValidationError from "./validationError.interface";
  *  This function flattens an array of ValidateError objects,
  *  concatenating the path with an specified delimiter
  */
-function flatten(validationErrors: ValidationError[], delimiter: string) {
+function flatten(validationErrors: ValidationError[], delimiter: string): any {
     return validationErrors.flatMap(error => {
         if (error.children.length === 0 || !error.children) {
             let {children, ...flattenedChild} = error;
@@ -13,7 +13,7 @@ function flatten(validationErrors: ValidationError[], delimiter: string) {
         }
 
         const flattenedChildren = flatten(error.children, delimiter);
-        return flattenedChildren.map(child => {
+        return flattenedChildren.map((child: any) => {
             return {
                 ...child,
                 property: error.property + delimiter + child.property
@@ -30,7 +30,7 @@ export function flattenValidationErrors(validationErrors: ValidationError[], opt
     let flattenedArray = flatten(validationErrors, options.delimiter || '.');
 
     if (options.omitErrorsMessages) {
-        flattenedArray = flattenedArray.map(error => {
+        flattenedArray = flattenedArray.map((error: any) => {
             return {
                 ...error,
                 constraints: Object.keys(error.constraints)
