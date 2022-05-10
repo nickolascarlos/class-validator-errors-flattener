@@ -65,6 +65,7 @@ The flattenValidationErrors accepts an options parameter:
 export interface Options {
     delimiter?: string;
     omitErrorsMessages?: boolean;
+    omitErrorsNames?: boolean;
 }
 ```
 
