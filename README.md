@@ -74,7 +74,12 @@ export interface Options {
 
 - omitErrorsMessages
   - Sets whether errors messages should be omitted
-  - If so, constraints names will be shown as an array 
+  - If true, constraints property will be an array of the constraints names
+  - Default: ```false```
+
+- omitErrorsNames
+  - Sets whether errors names should be omitted
+  - If true, constraints property will be an array of the constraints messages
   - Default: ```false```
 
 ## License

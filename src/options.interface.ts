@@ -7,7 +7,7 @@ export interface Options {
 
     /*
      *  Should errors messages be omitted?
-     *  If true, constraints property will be an array of the constraints name
+     *  If true, constraints property will be an array of the constraints names
      *  Default: false
      */
     omitErrorsMessages?: boolean;
