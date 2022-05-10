@@ -23,22 +23,26 @@ function flatten(validationErrors: ValidationError[], delimiter: string): any {
 }
 
 /*
- *  This function calls flattenCore to, effectively, flatten the array
+ *  This function calls flatten(...) to, effectively, flatten the array
  *  and process the specified options
  */
 export function flattenValidationErrors(validationErrors: ValidationError[], options: Options = {}) {
+    if (options.omitErrorsMessages && options.omitErrorsNames)
+        throw 'omitErrorsMessages and omitErrorsNames options are not meant to be used together'
+    
     let flattenedArray = flatten(validationErrors, options.delimiter || '.');
 
-    if (options.omitErrorsMessages) {
+    if (options.omitErrorsMessages || options.omitErrorsNames) {
         flattenedArray = flattenedArray.map((error: any) => {
             return {
                 ...error,
-                constraints: Object.keys(error.constraints)
+                constraints: options.omitErrorsMessages 
+                                ? Object.keys(error.constraints) 
+                                : Object.keys(error.constraints).map((key) => error.constraints[key]),
             }
         })
     }
 
     return flattenedArray;
 }
-
 

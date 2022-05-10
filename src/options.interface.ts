@@ -6,9 +6,16 @@ export interface Options {
     delimiter?: string;
 
     /*
-     *  Should message errors be omitted?
-     *  If so, constraints names will be shown as an array 
+     *  Should errors messages be omitted?
+     *  If true, constraints property will be an array of the constraints name
      *  Default: false
      */
     omitErrorsMessages?: boolean;
+
+    /*
+     *  Should errors names be omitted?
+     *  If true, constraints property will be an array of the constraints messages 
+     *  Default: false
+     */
+    omitErrorsNames?: boolean;
 }
