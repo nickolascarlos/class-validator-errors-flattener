@@ -7,7 +7,7 @@ import ValidationError from "./validationError.interface";
  */
 function flatten(validationErrors: ValidationError[], delimiter: string): any {
     return validationErrors.flatMap(error => {
-        if (error.children.length === 0 || !error.children) {
+        if   (!error.children || error.children.length === 0) {
             let {children, ...flattenedChild} = error;
             return [flattenedChild];
         }
